@@ -1,0 +1,84 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.container {
+	display: flex;
+	width: 90%;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.panel {
+	height: 80vh;
+	margin: 1rem;
+	border: solid 1px grey;
+	border-radius: 1rem;
+	flex: 0.5;
+	background-position: center;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	position: relative;
+	object-fit: cover;
+	transition: flex 0.3s ease-in;
+	cursor: pointer;
+}
+
+.panel h3 {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	padding: 1rem;
+	opacity: 0;
+	color: rgb(235, 144, 8);
+	transition: opacity 0.7s ease-in;
+}
+
+.active {
+	flex: 5;
+}
+
+.panel.active h3 {
+	opacity: 1;
+}
+
+.panel:nth-child(1) {
+	background-image: url("./img/jacket-1.jpg");
+}
+
+.panel:nth-child(2) {
+	background-image: url("./img/jacket-2.jpg");
+}
+.panel:nth-child(3) {
+	background-image: url("./img/jacket-3.jpg");
+}
+.panel:nth-child(4) {
+	background-image: url("./img/jacket-4.jpg");
+}
+
+.panel:nth-child(5) {
+	background-image: url("./img/jacket-5.jpg");
+}
+
+@media (max-width: 480px) {
+	.container {
+		width: 100vw;
+	}
+
+	.panel:nth-child(5),
+	.panel:nth-child(4) {
+		display: none;
+	}
+}
